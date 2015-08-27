@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css"></link>
+<script type="text/javascript" src="script.js"></script>
+</head>
+	<body onload="init();">
+	<table id="main">
+	<tr><th><label>To Do :<input type = "text" id = "text" placeholder="write task to do and hit Eneter"></input></label><input type="text" id="color" placeholder="enter color name for task"></input></th><th><label>Done :</label></th></tr>
+		<tr>
+			<td id="to_do">
+		<div id="todo">
+		
+			
+			<table id="todo_table">
+				
+
+			</table>
+		</div>
+		<div id = 'template' hidden = "true">
+			<div class="task" id="{{id}}" draggable = "true" ondragstart="drag(event);" style="background-color:{{color}}">
+				<i class="remove" onclick="fun">x</i>
+				<p>{{text}}</p>
+
+				
+			</div>
+		</div>
+		</td>
+		<td id='do_ne' ondrop="drop(event)" ondragover="allowDrop(event)">
+		<table id = "done">
+		</table>
+		</td></tr></table>
+
+		
+	</body>
+</html>
