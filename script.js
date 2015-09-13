@@ -1,9 +1,15 @@
-var task_id,task_count,doc,done_count;
+var task_id,task_count,doc,done_count,color = "yellow";
 function init ()
 {
 	doc = document;
 	doc.getElementById('text').addEventListener('keypress',addTodo);
-	doc.getElementById('color').addEventListener('keypress',addTodo);
+	//doc.getElementById('color').addEventListener('keypress',addTodo);
+	doc.getElementById('red').addEventListener('click',addColor);
+	doc.getElementById('green').addEventListener('click',addColor);
+	doc.getElementById('yellow').addEventListener('click',addColor);
+	doc.getElementById('skyblue').addEventListener('click',addColor);
+	doc.getElementById('gray').addEventListener('click',addColor);
+	
 	if(localStorage.getItem('task_counter'))
 	{
 		task_count = parseInt(localStorage.getItem('task_counter'));
@@ -91,13 +97,14 @@ function addTodo(event)
 		var text = doc.getElementById('text').value;
 		if(text)
 		{
-			var color = doc.getElementById('color').value;
+			
 			var temp = doc.getElementById('template').innerHTML;
 			task_id += 1;
 			task_count += 1;
 			var row_no = task_count / 2;
 			localStorage.setItem('task_counter',task_count);
 			localStorage.setItem('task'+task_id,text);
+
 			temp = temp.replace('{{id}}',task_id);
 			temp = temp.replace('fun','rem(event,'+task_id+')');
 			if(color)
@@ -121,6 +128,20 @@ function addTodo(event)
 	}
 	
 
+}
+function addColor(event){
+	console.log("color selected");
+	color = event.target.id;
+	document.getElementById('text').setAttribute('style', "background-color:"+color+";");
+	//event.target.setAttribute('style', "background-color:"+color+";");
+	var colors = document.getElementById('colors').childNodes;
+	for(i in colors)
+	{
+		if(i.id && i.id != event.target.id)
+		{
+			i.style = init;
+		}
+	}
 }
 
 function drag(event)

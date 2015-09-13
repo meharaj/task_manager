@@ -8,19 +8,20 @@
 #todo_table{
 	position: relative;
 }
-.remove{
+.task .remove{
 	position: absolute;
-	right: 10px;
+	left: 10px;
 }
-.remove:hover{
+.task .remove:hover{
 	color: red;
 }
 #text{
 	width: 100%;
-	height: 20px;
+	height: 50px;
+	font-size: 100%;
 }
 #color{
-	
+	display: none;
 	width: 100%;
 	height: 20px;
 
@@ -39,4 +40,52 @@
 	position: relative;;
 	width: 30%;
 	background-color: #eee;
+}
+#green{
+	display: inline-block;
+	height: 20px;
+width: 20px;
+margin: 10px;
+border-radius: 50%;
+border: 5px solid green;
+cursor: pointer;
+
+}
+#yellow{
+	display: inline-block;
+	height: 20px;
+width: 20px;
+margin: 10px;
+border-radius: 50%;
+border: 5px solid yellow;
+cursor: pointer;
+
+
+}
+#skyblue{
+	display: inline-block;
+	height: 20px;
+width: 20px;
+margin: 10px;
+border-radius: 50%;
+border: 5px solid skyblue;
+cursor: pointer;
+}
+#gray{
+	display: inline-block;
+	height: 20px;
+width: 20px;
+margin: 10px;
+border-radius: 50%;
+border: 5px solid gray;
+cursor: pointer;
+}
+#red{
+	display: inline-block;
+	height: 20px;
+width: 20px;
+margin: 10px;
+border-radius: 50%;
+border: 5px solid red;
+cursor: pointer;
 }
